@@ -38,11 +38,8 @@ const replaceTemplate = (temp, product) =>{
    output = output.replace(/{%NUTRIENTS%}/g, product.nutrients)
    output = output.replace(/{%QUANTITY%}/g, product.quantity)
    output = output.replace(/{%DESCRIPTION%}/g, product.description)
-   output = output.replace(/{%ID%}/g, product.id)
-   if (!product.organic) {
-    output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic')  
-   }
-   return output;
+   output = output.replace(/{%ID%}/g, product.productName)
+   output = output.replace(/{%IMAGE%}/g, product.productName)
 }
 
  
@@ -62,9 +59,9 @@ const server = http.createServer((req, res) => {
   if (pathName === "/overview" || pathName === "/") {
 res.writeHead(200, {'content-type': 'text/html'})
 
-const cardsHtml = dataObj.map(el => replaceTemplate(tempCard, el)).join('');
-    const output = tempOverview.replace('%PRODUCT_CARDS', cardsHtml);
-    res.end(output);
+const cardHtml = dataObj.map(el => replaceTemplate(tempCard, el))
+
+    res.end(tempOverview);
 
     // product page
   } else if (pathName === "/product") {
