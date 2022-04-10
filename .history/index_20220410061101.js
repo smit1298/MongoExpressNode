@@ -43,7 +43,8 @@ const server = http.createServer((req, res) => {
     res.end("This is the PRODUCT");
   } else if (pathName === "/api") {    
       res.writeHead(200, { "Content-type": "application/json" });
-      res.end(data);    
+      res.end(data);
+    
   } else {
     res.writeHead(404, {
       "Content-type": "text/html",
