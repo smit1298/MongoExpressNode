@@ -1,0 +1,25 @@
+{
+  "name": "mongoexpressreact",
+  "version": "1.0.0",
+  "description": "learning",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon inde"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smit1298/MongoExpressNode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smit1298/MongoExpressNode/issues"
+  },
+  "homepage": "https://github.com/smit1298/MongoExpressNode#readme",
+  "dependencies": {
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
